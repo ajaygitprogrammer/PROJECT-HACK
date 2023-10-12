@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Menu page</title>
+    <style>
+        .menu-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+            display: inline-block;
+        }
+
+        .dish-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .quantity {
+            font-size: 16px;
+        }
+
+        .rating {
+            font-size: 16px;
+        }
+
+        .detail {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .add-to-cart {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .control-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-card">
+        <div class="dish-name">Dish 1</div>
+        <div class="quantity">
+            Quantity:
+            <div class="cart-controls">
+                <div class="quantity-controls">
+                    <button class="control-button" onclick="decreaseQuantity(this)">-</button>
+                    <span id="dish1-quantity">1</span>
+                    <button class="control-button" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="rating">Rating: ★★★★☆</div>
+        <div class="detail">Served at: Restaurant A</div>
+        <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+
+    <div class="menu-card">
+        <div class="dish-name">Dish 2</div>
+        <div class="quantity">
+            Quantity:
+            <div class="cart-controls">
+                <div class="quantity-controls">
+                    <button class="control-button" onclick="decreaseQuantity(this)">-</button>
+                    <span id="dish2-quantity">1</span>
+                    <button class="control-button" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="rating">Rating: ★★★☆☆</div>
+        <div class="detail">Served at: Restaurant B</div>
+        <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+
+    <div class="menu-card">
+        <div class="dish-name">Dish 3</div>
+        <div class="quantity">
+            Quantity:
+            <div class="cart-controls">
+                <div class="quantity-controls">
+                    <button class="control-button" onclick="decreaseQuantity(this)">-</button>
+                    <span id="dish2-quantity">1</span>
+                    <button class="control-button" onclick="increaseQuantity(this)">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="rating">Rating: ★★★☆☆</div>
+        <div class="detail">Served at: Restaurant B</div>
+        <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+
+    <!-- Repeat the above code for other dishes -->
+    
+    <script>
+        function increaseQuantity(button) {
+            const quantityElement = button.parentElement.querySelector("span");
+            const currentQuantity = parseInt(quantityElement.textContent);
+            quantityElement.textContent = currentQuantity + 1;
+        }
+
+        function decreaseQuantity(button) {
+            const quantityElement = button.parentElement.querySelector("span");
+            const currentQuantity = parseInt(quantityElement.textContent);
+            if (currentQuantity > 1) {
+                quantityElement.textContent = currentQuantity - 1;
+            }
+        }
+
+        function addToCart(button) {
+            // Implement your cart logic here
+            alert("Dish added to the cart!");
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="time"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ARAVIL TIME</h1>
+        <form id="form">
+            <label for="aravil-time">Select ARAVIL TIME:</label>
+            <input type="time" id="aravil-time" name="aravil-time" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for selecting your ARAVIL TIME!');
+        });
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>
